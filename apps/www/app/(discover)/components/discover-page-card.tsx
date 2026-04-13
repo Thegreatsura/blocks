@@ -39,7 +39,6 @@ export const DiscoverPageCard = ({ category, registryItem, theme, href, title, s
                 <DiscoverCardToolbar
                     href={href}
                     title={title}
-                    subtitle={subtitle}
                     registryUrl={registryUrl}
                     category={category}
                     registryItem={registryItem}

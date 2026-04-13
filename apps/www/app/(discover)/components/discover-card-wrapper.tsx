@@ -30,7 +30,7 @@ export const DiscoverPageCard = ({ category, registryItem, theme, href, title, s
             className="group relative"
             onMouseEnter={!asDialog ? handleMouseEnter : undefined}
             onMouseLeave={!asDialog ? handleMouseLeave : undefined}>
-            {isToolbarVisible && !asDialog && <DiscoverCardToolbar {...{ href, title, subtitle, registryUrl, category, registryItem, theme, isBlock, disableV0, openInNewTab }} />}
+            {isToolbarVisible && !asDialog && <DiscoverCardToolbar {...{ href, title, registryUrl, category, registryItem, theme, isBlock, disableV0, openInNewTab }} />}
 
             <CardContainer>
                 {children}
