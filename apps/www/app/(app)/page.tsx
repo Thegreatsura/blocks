@@ -188,9 +188,7 @@ export default async function Home() {
             <WallOfLove />
             <FAQs />
 
-            <div className="pt-24">
-                <SiteFooter />
-            </div>
+            <SiteFooter asHome />
         </>
     )
 }

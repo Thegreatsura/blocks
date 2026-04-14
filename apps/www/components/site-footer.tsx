@@ -5,43 +5,31 @@ import { ThemeToggle } from './theme-toggle'
 import { Mail } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export const SiteFooter = () => (
+export const SiteFooter = ({ asHome }: { asHome?: boolean }) => (
     <footer
         role="contentinfo"
-        className="pb-16">
-        <div className="mx-auto max-w-7xl px-4">
+        data-target={asHome ? 'home' : 'app'}
+        className={cn('pb-16', asHome && 'pb-32 pt-24')}>
+        <div className={cn('mx-auto max-w-7xl px-4', asHome && 'text-center')}>
             <FooterHomeLink />
 
-            <div className="*:text-muted-foreground *:hover:text-foreground mt-4 flex flex-wrap gap-3">
-                <Link
-                    href="https://pro.tailark.com/illustrations"
-                    className="text-sm">
-                    Illustrations
-                </Link>
-                <Link
-                    href="/blocks"
-                    className="text-sm">
-                    Blocks
-                </Link>
-                <Link
-                    href="/pages"
-                    className="text-sm">
-                    Pages
-                </Link>
-                <Link
-                    href="/docs"
-                    className="text-sm">
-                    Get started
-                </Link>
+            <div className={cn('*:text-muted-foreground *:hover:text-foreground mt-4 flex flex-wrap gap-3 text-sm', asHome && 'mt-12 flex-col gap-0 text-3xl font-medium tracking-tight *:py-3')}>
+                <Link href="https://pro.tailark.com/illustrations">Illustrations</Link>
+                <Link href="/blocks">Blocks</Link>
+                <Link href="/pages">Pages</Link>
+                <Link href="/docs">Get started</Link>
+                <Link href="https://pro.tailark.com/early-access">Early access</Link>
+                <Link href="https://pro.tailark.com/changelog">Changelog</Link>
                 <Link
                     href="https://tailark.affonso.io"
                     target="_blank"
-                    rel="noreferrer"
-                    className="text-sm">
-                    Affiliates <span className="font-medium">30%</span>
+                    rel="noreferrer">
+                    Affiliates <span className="font-semibold">30%</span>
                 </Link>
             </div>
-            <FooterContent />
+            <div className={cn('mt-auto', asHome && 'mx-auto mt-12 w-fit')}>
+                <FooterContent />
+            </div>
         </div>
     </footer>
 )
@@ -49,12 +37,12 @@ export const SiteFooter = () => (
 export const FooterContent = ({ className, asSidePanel }: { className?: string; asSidePanel?: boolean }) => (
     <div className={cn('mt-auto', className)}>
         {asSidePanel && <FooterHomeLink />}
-        <div className="-ml-2 mt-4 flex gap-2">
+        <div className="not-in-data-[target=home]:-ml-2 mt-4 flex gap-2">
             <Button
                 asChild
                 variant="ghost"
                 size="sm"
-                className="size-8 rounded-full">
+                className="size-8">
                 <Link
                     href="https://x.com/MeschacIrung/"
                     target="_blank"
@@ -91,7 +79,7 @@ export const FooterContent = ({ className, asSidePanel }: { className?: string; 
                 asChild
                 variant="ghost"
                 size="sm"
-                className="size-8 rounded-full">
+                className="size-8">
                 <Link
                     href="mailto:hey@tailark.com"
                     aria-label="contact"
@@ -108,7 +96,7 @@ const FooterHomeLink = () => (
     <Link
         href="/"
         aria-label="Home"
-        className="hover:bg-muted -ml-1.5 mb-2 flex size-8 items-center justify-center rounded-md duration-200">
+        className="hover:bg-foreground/5 mb-2 inline-flex size-8 items-center justify-center rounded-md duration-200">
         <LogoIcon />
     </Link>
 )
