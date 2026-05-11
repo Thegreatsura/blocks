@@ -74,11 +74,11 @@ export default function HeroSection() {
                                     },
                                 },
                             }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32">
+                            className="mask-y-from-35% mask-y-to-90% absolute inset-0 top-56 lg:top-12">
                             <Image
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
+                                src="https://images.unsplash.com/photo-1662285064441-bedb11ca7e47?q=80&w=1344&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 alt="background"
-                                className="hidden size-full dark:block"
+                                className="hidden size-full mix-blend-overlay dark:block"
                                 width="3276"
                                 height="4095"
                             />
