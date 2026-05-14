@@ -34,6 +34,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${categoryDisplay} ${variantDisplay} | Tailark ${kitShortName.charAt(0).toUpperCase() + kitShortName.slice(1)}`,
         metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://tailark.com'),
+        robots: {
+            index: false,
+            follow: false,
+        },
         openGraph: {
             title: `${kitShortName} - ${category} ${variant}`,
             images: [`/og?type=preview&slug=${slug.join(',')}`],
